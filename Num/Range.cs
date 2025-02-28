@@ -113,6 +113,12 @@ public class BadSequenceException : Exception
 
     }
 
+    /// <summary>
+    /// Represents a value in the range [0.0, 1.0] and categorizes it into one of four quarters.
+    /// Two <see cref="Range"/> objects are considered equal if they fall into the same quarter:
+    /// [0.0, 0.25), [0.25, 0.5), [0.5, 0.75), or [0.75, 1.0].
+    /// </summary>
+
     public class Range
     {
       
@@ -127,6 +133,15 @@ public class BadSequenceException : Exception
         }
 
          private int QuarterIndex => (Value < 0.25) ? 0 : (Value < 0.5) ? 1 : (Value < 0.75) ? 2 : 3;
+
+// <summary>
+        /// Determines whether the specified object is equal to the current <see cref="Range"/> instance.
+        /// Two ranges are considered equal if they fall into the same quarter.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current instance.</param>
+        /// <returns>
+        /// true if the specified object is a <see cref="Range"/> and falls into the same quarter as the current instance; otherwise, false.
+        /// </returns>
 
         public override bool Equals(object obj)
         {
