@@ -37,7 +37,23 @@ public class RangeTests
             Assert.Equal(0.7, enumerator.Current);
         }
     
-
+ }
+    
+    public class RangeTests
+    {
+        [Fact]
+        public void EqualQuarter()
+        {
+            // Arrange
+            var r1 = new Range(0.1);   // Falls in [0.0, 0.25)
+            var r2 = new Range(0.2);   // Falls in [0.0, 0.25)
+            var r3 = new Range(0.3);   // Falls in [0.25, 0.5)
+            
+            // Act & Assert
+            Assert.True(r1 == r2);
+            Assert.False(r1 == r3);
+        }
+        
 
 
 
