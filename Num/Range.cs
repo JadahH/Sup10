@@ -65,4 +65,41 @@ public class BadSequenceException : Exception
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+    }
+
+    public class Range
+    {
+      
+        public double Value { get; }
+
+     
+        public Range(double value)
+        {
+            if (value < 0.0 || value > 1.0)
+                throw new ArgumentOutOfRangeException(nameof(value), "Value must be between 0.0 and 1.0.");
+            Value = value;
+        }
+
+         private int QuarterIndex => (Value < 0.25) ? 0 : (Value < 0.5) ? 1 : (Value < 0.75) ? 2 : 3;
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Range other)
+                return this.QuarterIndex == other.QuarterIndex;
+            return false;
+        }
+
+        public override int GetHashCode() => QuarterIndex.GetHashCode();
+
+        public static bool operator ==(Range a, Range b)
+        {
+            if (ReferenceEquals(a, b))
+                return true;
+            if (a is null || b is null)
+                return false;
+            return a.QuarterIndex == b.QuarterIndex;
+        }
+
+        public static bool operator !=(Range a, Range b) => !(a == b);
     }
