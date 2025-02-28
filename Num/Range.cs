@@ -102,4 +102,24 @@ public class BadSequenceException : Exception
         }
 
         public static bool operator !=(Range a, Range b) => !(a == b);
+        
+
+         public static bool operator <(Range a, Range b)
+        {
+            if (a is null || b is null)
+                throw new ArgumentNullException();
+            return a.QuarterIndex < b.QuarterIndex;
+        }
+
+        public static bool operator >(Range a, Range b)
+        {
+            if (a is null || b is null)
+                throw new ArgumentNullException();
+            return a.QuarterIndex > b.QuarterIndex;
+        }
+
+        public static bool operator <=(Range a, Range b) => a == b || a < b;
+
+        public static bool operator >=(Range a, Range b) => a == b || a > b;
     }
+    
