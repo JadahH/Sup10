@@ -33,6 +33,11 @@ public class BadSequenceException : Exception
 
     }
 
+/// <summary>
+    /// Provides an enumerable sequence of floating-point numbers in the range [0.0, 1.0).
+    /// When three consecutive numbers are less than or equal to 0.5, a <see cref="BadSequenceException"/> is thrown.
+    /// </summary>
+    /// 
 
      public class FloatNumberIterator : IEnumerable<double>
     {
@@ -40,7 +45,12 @@ public class BadSequenceException : Exception
         private readonly Random _random;
         private readonly bool _useCustomSequence;
 
-       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FloatNumberIterator"/> class.
+        /// If a custom sequence is provided, it will be used for enumeration; otherwise, random numbers are generated.
+        /// </summary>
+        /// <param name="customSequence">An optional sequence of double values for testing purposes.</param>
+
         public FloatNumberIterator(IEnumerable<double> customSequence = null)
         {
             if (customSequence != null)
