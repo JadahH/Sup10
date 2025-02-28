@@ -54,7 +54,25 @@ public class RangeTests
             Assert.False(r1 == r3);
         }
         
+        [Fact]
+        public void Operator()
+        {
+            // Arrange: Create Range objects in increasing quarter order.
+            var r1 = new Range(0.1); 
+            var r2 = new Range(0.3); 
+            var r3 = new Range(0.6); 
+            var r4 = new Range(0.9); 
 
+            // Act & Assert:
+            Assert.True(r1 < r2);
+            Assert.True(r2 < r3);
+            Assert.True(r3 < r4);
+            Assert.True(r4 > r1);
+            Assert.True(r2 <= r2);
+            Assert.True(r3 >= r3);
+            Assert.True(r1 != r2);
+        }
+    
 
 
 
