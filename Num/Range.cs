@@ -150,6 +150,14 @@ public class BadSequenceException : Exception
             return false;
         }
 
+/// <summary>
+        /// Determines whether two <see cref="Range"/> instances are equal,
+        /// i.e., whether they fall into the same quarter.
+        /// </summary>
+        /// <param name="a">The first <see cref="Range"/> instance.</param>
+        /// <param name="b">The second <see cref="Range"/> instance.</param>
+        /// <returns>true if both instances are in the same quarter; otherwise, false.</returns>
+
         public override int GetHashCode() => QuarterIndex.GetHashCode();
 
         public static bool operator ==(Range a, Range b)
