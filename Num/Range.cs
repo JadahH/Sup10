@@ -171,6 +171,12 @@ public class BadSequenceException : Exception
 
         public static bool operator !=(Range a, Range b) => !(a == b);
         
+/// <summary>
+        /// Determines whether two <see cref="Range"/> instances are not equal.
+        /// </summary>
+        /// <param name="a">The first <see cref="Range"/> instance.</param>
+        /// <param name="b">The second <see cref="Range"/> instance.</param>
+        /// <returns>true if the instances are not in the same quarter; otherwise, false.</returns>
 
          public static bool operator <(Range a, Range b)
         {
@@ -185,6 +191,13 @@ public class BadSequenceException : Exception
                 throw new ArgumentNullException();
             return a.QuarterIndex > b.QuarterIndex;
         }
+
+ /// <summary>
+        /// Determines whether one <see cref="Range"/> instance is greater than or equal to another.
+        /// </summary>
+        /// <param name="a">The first <see cref="Range"/> instance.</param>
+        /// <param name="b">The second <see cref="Range"/> instance.</param>
+        /// <returns>true if <paramref name="a"/> is in the same or a higher or lower quarter than <paramref name="b"/>; otherwise, false.</returns>
 
         public static bool operator <=(Range a, Range b) => a == b || a < b;
 
