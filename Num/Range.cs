@@ -65,6 +65,15 @@ public class BadSequenceException : Exception
             }
         }
 
+
+         /// <summary>
+        /// Returns an enumerator that iterates through a sequence of double values.
+        /// </summary>
+        /// <returns>An enumerator for the floating-point numbers.</returns>
+        /// <exception cref="BadSequenceException">
+        /// Thrown when three consecutive numbers generated are less than or equal to 0.5.
+        /// </exception>
+
         
         public IEnumerator<double> GetEnumerator()
         {
@@ -94,6 +103,11 @@ public class BadSequenceException : Exception
                 yield return number;
             }
         }
+
+         /// <summary>
+        /// Returns a non-generic enumerator that iterates through the collection.
+        /// </summary>
+        /// <returns>An <see cref="IEnumerator"/> object for the collection.</returns>
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
