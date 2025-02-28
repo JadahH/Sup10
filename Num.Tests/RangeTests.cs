@@ -62,6 +62,12 @@ public class RangeTests
 
     public class RangeTests
     {
+
+
+        /// <summary>
+        /// Verifies that two <see cref="Range"/> objects are considered equal if they fall in the same quarter interval.
+        /// </summary>
+
         [Fact]
         public void EqualQuarter()
         {
@@ -75,6 +81,10 @@ public class RangeTests
             Assert.False(r1 == r3);
         }
         
+         /// <summary>
+        /// Verifies that the comparison operators (<, >, <=, >=, !=) for the <see cref="Range"/> class work as expected.
+        /// </summary>
+
         [Fact]
         public void Operator()
         {
