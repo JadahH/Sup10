@@ -11,7 +11,7 @@ public class RangeTests
         /// less than or equal to 0.5 are encountered in the sequence.
         /// </summary>
         /// 
-        
+
     [Fact]
     public void ThrowsException()
     {
@@ -27,6 +27,12 @@ public class RangeTests
 
              Assert.Throws<BadException>(() => enumerator.MoveNext());
     }
+
+
+        /// <summary>
+        /// Verifies that the iterator does not throw an exception when the sequence does not contain 
+        /// three consecutive numbers less than or equal to 0.5.
+        /// </summary>
 
             [Fact]
         public void NoException()
@@ -49,6 +55,11 @@ public class RangeTests
     
  }
     
+    /// <summary>
+    /// Tests for the <see cref="Range"/> class. The <c>Range</c> class represents a value in the range [0.0, 1.0]
+    /// and defines equality and comparison based on which quarter of the range the value falls into.
+    /// </summary>
+
     public class RangeTests
     {
         [Fact]
