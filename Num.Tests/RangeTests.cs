@@ -1,7 +1,17 @@
+using System;
+using Xunit;
+
 namespace Num.Tests;
 
 public class RangeTests
 {
+
+    /// <summary>
+        /// Verifies that the iterator throws a <see cref="BadException"/> when three consecutive numbers 
+        /// less than or equal to 0.5 are encountered in the sequence.
+        /// </summary>
+        /// 
+        
     [Fact]
     public void ThrowsException()
     {
