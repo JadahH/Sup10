@@ -39,7 +39,7 @@ public class Range2Tests
 
 
 
-        [Fact]
+      [Fact]
         public void ThrowsBadException()
         {
             var testSequence = new List<double> { 0.3, 0.4, 0.2 }; // Three consecutive ≤ 0.5
@@ -49,6 +49,19 @@ public class Range2Tests
             Assert.True(enumerator.MoveNext());
             Assert.True(enumerator.MoveNext());
             Assert.Throws<BadSequenceException>(() => enumerator.MoveNext());
+        }
+
+        [Fact]
+        public void QuarterOrganization()
+        {
+            var r1 = new Range(0.1); // Quarter 0
+            var r2 = new Range(0.3); // Quarter 1
+            var r3 = new Range(0.6); // Quarter 2
+            var r4 = new Range(0.9); // Quarter 3
+
+            Assert.NotEqual(r1, r2);
+            Assert.NotEqual(r2, r3);
+            Assert.NotEqual(r3, r4);
         }
 
 }
