@@ -48,6 +48,18 @@ static void Main()
                         }
 
 
+                        /// <summary>
+                        /// Processes the current value from an enumerator by creating a new <see cref="Range"/> instance,
+                        /// adding it to a collection, and then grouping the collection based on each Range's hash code.
+                        /// </summary>
+                        /// <param name="enumerator">
+                        /// An enumerator that provides double values. The current value will be used to create a new Range.
+                        /// </param>
+                        /// <param name="quarters">
+                        /// A list of <see cref="Range"/> objects where the newly created Range will be added.
+                        /// </param>
+
+
                         double newValue = enumerator.Current;
                         Range newRange = new Range(newValue);
                         quarters.Add(newRange);
