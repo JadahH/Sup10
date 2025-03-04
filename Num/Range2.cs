@@ -7,6 +7,13 @@ namespace Num;
 public class Range2
 {
 
+
+     /// <summary>
+    /// The main entry point of the application.
+    /// Initializes quarter ranges and a floating number iterator, and then displays an interactive menu
+    /// to the user to pick a quarter or quit the application.
+    /// </summary>
+
 static void Main()
         {
             List<Range> quarters = new List<Range>();
