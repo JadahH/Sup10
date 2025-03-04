@@ -14,7 +14,7 @@ public class Range2
     /// to the user to pick a quarter or quit the application.
     /// </summary>
 
-static void Main()
+    static void Main()
         {
             List<Range> quarters = new List<Range>();
             FloatNumberIterator floatIterator = new FloatNumberIterator();
@@ -70,17 +70,39 @@ static void Main()
                                                       .OrderBy(g => g.Key);
 
 
-
-
+                        foreach (var group in groupedQuarters)
+                        {
+                            double lowerBound = group.Key * 0.25;
+                            double upperBound = lowerBound + 0.25;
+                            Console.WriteLine($"Bucket [{lowerBound:F2} - {upperBound:F2}): {string.Join(", ", group.Select(q => q.Value.ToString("F2")))}");
+                        }
                     }
-
+                    catch (BadSequenceException ex)
+                    {
+                        Console.WriteLine($"\nERROR: {ex.Message}");
+                        Console.WriteLine("invalid sequence.");
+                        running = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"\nError: {ex.Message}");
+                        running = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid option. Please enter 'P' to add a quarter or 'Q' to quit.");
                 }
             }
 
+                    Console.WriteLine("\nPress any key to exit.");
+                    Console.ReadKey();
+                }
 
-        }
-
+                    
 
 }
+
+            
 
     
