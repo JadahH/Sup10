@@ -69,6 +69,10 @@ public class Range2Tests
         }
 
 
+           /// <summary>
+          /// Verifies that the <see cref="Range"/> operator overloads work correctly.
+          /// </summary>
+
        [Fact]
         public void Operator()
         {
