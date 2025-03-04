@@ -7,6 +7,11 @@ namespace Num.Tests;
 
 public class Range2Tests
 {
+
+        /// <summary>
+        /// Verifies that the console application correctly displays quarters grouped by range.
+        /// </summary>
+
       [Fact]
         public void GroupedQuarters()
         {
