@@ -32,6 +32,12 @@ public class Range2Tests
         }
 
 
+        /// <summary>
+        /// Verifies that the console application throws a <see cref="BadSequenceException"/>
+        /// when three consecutive numbers less than or equal to 0.5 are encountered.
+        /// </summary>
+
+
 
         [Fact]
         public void ThrowsBadException()
