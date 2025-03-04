@@ -33,4 +33,16 @@ public class Range2Tests
 
 
 
+        [Fact]
+        public void ThrowsBadException()
+        {
+            var testSequence = new List<double> { 0.3, 0.4, 0.2 }; // Three consecutive ≤ 0.5
+            var iterator = new FloatNumberIterator(testSequence);
+            var enumerator = iterator.GetEnumerator();
+
+            Assert.True(enumerator.MoveNext());
+            Assert.True(enumerator.MoveNext());
+            Assert.Throws<BadSequenceException>(() => enumerator.MoveNext());
+        }
+
 }
