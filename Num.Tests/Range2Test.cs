@@ -51,6 +51,10 @@ public class Range2Tests
             Assert.Throws<BadSequenceException>(() => enumerator.MoveNext());
         }
 
+        /// <summary>
+        /// Verifies that <see cref="Range"/> instances are correctly categorized based on their quarters.
+        /// </summary>
+
         [Fact]
         public void QuarterOrganization()
         {
