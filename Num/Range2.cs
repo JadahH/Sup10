@@ -46,6 +46,20 @@ static void Main()
                             Console.WriteLine("No more numbers available.");
                             break;
                         }
+
+
+                        double newValue = enumerator.Current;
+                        Range newRange = new Range(newValue);
+                        quarters.Add(newRange);
+
+                      
+                        Console.WriteLine("\nPresent Quarters:");
+                        var groupedQuarters = quarters.GroupBy(q => q.GetHashCode())
+                                                      .OrderBy(g => g.Key);
+
+
+
+
                     }
 
                 }
@@ -53,6 +67,7 @@ static void Main()
 
 
         }
+
 
 }
 
