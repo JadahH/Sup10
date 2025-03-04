@@ -70,6 +70,13 @@ public class Range2
                                                       .OrderBy(g => g.Key);
 
 
+
+
+                            /// <summary>
+                            /// The main entry point of the application.
+                            /// It allows the user to add quarter values, processes them into buckets, and handles any errors that occur.
+                            /// </summary>
+
                         foreach (var group in groupedQuarters)
                         {
                             double lowerBound = group.Key * 0.25;
